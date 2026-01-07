@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run a one-line script
+      run: echo Hello, world!
+    - name: Run a multi-line script
+      run: |
+        echo Add other actions to build,
+        echo test, and deploy your project.
+```
+
+### ステップ3：そのまま保存（コミット）
+
+1. 右上の **「Commit changes...」** ボタンをクリック
+2. **「Commit changes」** をクリック（そのままでOK）
+
+### ステップ4：動作確認
+
+1. 上部の **「Actions」タブ**をクリック
+2. 実行中のワークフローが表示される
+3. クリックすると、実行内容が見れる
+
+### これで何が起きた？
+```
+あなたがやったこと：
+1. YAMLファイルを作成してコミット
+
+GitHub Actionsが自動でやったこと：
+1. Ubuntu環境を起動
+2. "Hello, world!"と表示
+3. 複数行のメッセージを表示
